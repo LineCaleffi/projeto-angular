@@ -1,0 +1,31 @@
+<h1> Componente Root</h1>
+<p> Interpolação: {{ title }}</p>
+<!-------------------------------------------------------------------------->
+<div>
+  <p style="background-color: yellow;">
+    Empresa: {{ empresa }}
+  </p>
+</div>
+<!-------------------------------------------------------------------------->
+<!-- Property Binding TS -> HTML -->
+<div>
+  <p [style]="corFundo"> Empresa: [ empresa ]</p>
+</div>
+<!-------------------------------------------------------------------------->
+<p>
+  <button (click)="clicar()"> Clique aqui </button>
+</p>
+<!-------------------------------------------------------------------------->
+<p>
+  <input type="text" [value]="empresa"
+    (keyup)="getTextoDigitado(empresaInput)"
+    #empresaInput >
+</p>
+<!-------------------------------------------------------------------------->
+<p>
+  <input type="text" [(ngModel)]="empresa">
+</p>
+<h1 [style]="corFundo">Pegando do HTML listar.component - APP LISTAR</h1>
+
+<app-listar [empresaFilho]="empresa"></app-listar>
+<!-- FUNCIONANDO - LOCALHOST:4200-->
