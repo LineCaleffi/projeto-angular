@@ -1,19 +1,20 @@
 <h1> Componente Root</h1>
 <p> Interpolação: {{ title }}</p>
-<!-------------------------------------------------------------------------->
+<app-listar [empresaFilho]="empresa"></app-listar>
+
 <div>
   <p style="background-color: yellow;">
     Empresa: {{ empresa }}
   </p>
 </div>
-<!-------------------------------------------------------------------------->
+
 <!-- Property Binding TS -> HTML -->
 <div>
   <p [style]="corFundo"> Empresa: [ empresa ]</p>
 </div>
 <!-------------------------------------------------------------------------->
 <p>
-  <button (click)="clicar()"> Clique aqui </button>
+  <button class="btn btn-primary"(click)="clicar()"> Clique aqui </button>
 </p>
 <!-------------------------------------------------------------------------->
 <p>
@@ -25,7 +26,56 @@
 <p>
   <input type="text" [(ngModel)]="empresa">
 </p>
-<h1 [style]="corFundo">Pegando do HTML listar.component - APP LISTAR</h1>
 
-<app-listar [empresaFilho]="empresa"></app-listar>
+<!-----------------------Bootstrap--------------------------------------------------->
+  <div class="row" style="background-color: aqua;">
+    <div class="col">
+      ALINE
+    </div>
+    <div class="col">
+      aline.caleffi@nava.com.br
+    </div>
+    <div class="col">
+      NAVA
+    </div>
+    <div class="col">
+      24
+    </div>
+  </div>
+
+<br> <b>Formatação de formulários com Bootstrap</b><br>
+  <div class="row" style="background-color: rgb(248, 186, 186);">
+    <div class="col-6"> <!-- Define o tamanho -->
+      Nome: <input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col-6"> <!-- Define o tamanho -->
+      Email: <input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col-1"> <!-- Define o tamanho -->
+      Idade:<input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col-6"> <!-- Define o tamanho -->
+      Cidade:<input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col-5"> <!-- Define o tamanho -->
+      Estado:<input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col-5"> <!-- Define o tamanho -->
+      CEP:<input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col-5"> <!-- Define o tamanho -->
+      Rua:<input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col-2"> <!-- Define o tamanho -->
+      Número:<input class="form-control" type="text"> <!-- cria caixa de formulário-->
+    </div>
+    <div class="col">    <br>   </div>
+  </div>
+
+<!--
+
+  button class="btn btn-primary" -> muda o visual do botão
+  <div class="col-2"> Define o tamanho
+
+-->
 <!-- FUNCIONANDO - LOCALHOST:4200-->
