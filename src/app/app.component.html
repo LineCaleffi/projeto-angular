@@ -1,4 +1,22 @@
-<router-outlet></router-outlet>
+<div class="container">
+  <ul class="nav nav-pills nav-fill justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/']"
+        routerLinkActive="active"  aria-current="page" >Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/professores']"
+      routerLinkActive="active" >Professores</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
 <!-- <h1> Componente Root</h1>
 <p> Interpolação: {{ title }}</p>
 <app-listar [empresaFilho]="empresa"></app-listar>
