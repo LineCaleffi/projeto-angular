@@ -16,7 +16,8 @@ export class ReativoFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.meuForm = this.formBuilder.group({
-      email : [ null, [ Validators.required, Validators.email ] ]
+      email : [ null, [ Validators.required, Validators.email ] ],
+      password : [ null, [ Validators.required ] ]
     });
     console.log(this.meuForm);
   }
