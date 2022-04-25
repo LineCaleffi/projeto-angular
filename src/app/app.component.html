@@ -2,14 +2,14 @@
   <ul class="nav nav-pills nav-fill justify-content-center">
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/']"
-        routerLinkActive="active"  aria-current="page" >Active</a>
+        routerLinkActive="active"  aria-current="page" [routerLinkActiveOptions]="{exact : true}">Active</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/professores']"
       routerLinkActive="active" >Professores</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" [routerLink]="['/formularios/reativo-form']"  routerLinkActive="active">Formulários</a>
     </li>
     <li class="nav-item">
       <a class="nav-link disabled">Disabled</a>
@@ -62,7 +62,7 @@
     </div>
   </div> -->
 
-<br> <b>Formatação de formulários com Bootstrap</b><br>
+<!-- <br> <b>Formatação de formulários com Bootstrap</b><br>
   <div class="row" style="background-color: rgb(248, 186, 186);">
     <div class="col-6">
       Nome: <input class="form-control" type="text">
@@ -89,12 +89,15 @@
       Número:<input class="form-control" type="text">
     </div>
     <div class="col">    <br>   </div>
-  </div>
+  </div> -->
 
 <!--
+  ANOTAÇÕES:
 
   button class="btn btn-primary" -> muda o visual do botão
   <div class="col-2"> Define o tamanho
+
+  [routerLinkActiveOptions]="{exact : true}" => deixa apenas um link selecionado
 
 -->
 <!-- FUNCIONANDO - LOCALHOST:4200-->

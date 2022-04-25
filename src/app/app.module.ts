@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormulariosModule } from './formularios/formularios.module';
 import { ProfessoresModule } from './professores/professores.module';
 
 
@@ -16,7 +17,8 @@ import { ProfessoresModule } from './professores/professores.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ProfessoresModule
+    ProfessoresModule,
+    FormulariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
