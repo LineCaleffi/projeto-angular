@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reativo-form',
@@ -12,9 +12,15 @@ export class ReativoFormComponent implements OnInit {
   meuForm: FormGroup = new FormGroup({});
 
   // FormBuilder é um serviço utilizado para ajudar a criar os mecanismos de controles do formulário
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder) {  }
 
   ngOnInit(): void {
+    this.meuForm = this.formBuilder.group({
+      email : [ null, [ Validators.required, Validators.email ] ]
+    });
+    console.log(this.meuForm);
   }
 
 }
+
+// email:[null,[Validators.required]] -> o campo email precisa estar preenchido
