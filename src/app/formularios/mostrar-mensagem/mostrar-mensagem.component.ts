@@ -9,11 +9,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class MostrarMensagemComponent implements OnInit {
 
   @Input()
-  controles : any;
+  controles: any;
+
+  @Input()
+  mensagem : string = 'Erro ao preencher campo' ;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
