@@ -1,15 +1,16 @@
-<p>listar works!</p>
-<p>Empresa Filho : {{ empresaFilho }}</p>
-<h3>
-  ------------------------------------- Grande Porte -------------------------------------
-</h3>
 <table class="table">
-  <tr>
+
+  <tr bgColor="#7FFFD4">
     <th>ID</th>
     <th>Nome</th>
     <th>Rua</th>
     <th>Número</th>
     <th>Cep</th>
+    <th>
+      <div class="row float-end">
+        <button class="btn btn-success" routerLink="/professores/criar"> Criar +</button>
+      </div>
+    </th>
   </tr>
   <!--Busca os dados do banco de dados-->
   <tr *ngFor="let p of professores">
@@ -18,7 +19,10 @@
     <th>{{p.rua}}</th>
     <th>{{p.numero}}</th>
     <th>{{p.cep}}</th>
+
   </tr>
+
+
 
 </table>
 
