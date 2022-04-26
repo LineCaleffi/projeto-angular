@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListarComponent } from './listar/listar.component';
 import { ProfessoresRoutingModule } from './professores-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { ProfessoresRoutingModule } from './professores-routing.module';
   ],
   imports: [
     CommonModule,
-    ProfessoresRoutingModule
+    ProfessoresRoutingModule,
+    HttpClientModule
   ],
   exports:[
     ListarComponent
