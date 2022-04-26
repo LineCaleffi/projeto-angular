@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormulariosModule } from './formularios/formularios.module';
 import { ProfessoresModule } from './professores/professores.module';
+import { ProfessoresGpModule } from './professores-gp/professores-gp.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ProfessoresModule } from './professores/professores.module';
     AppRoutingModule,
     FormsModule,
     ProfessoresModule,
-    FormulariosModule
+    FormulariosModule,
+    ProfessoresGpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

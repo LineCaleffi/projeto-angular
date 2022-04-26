@@ -1,0 +1,40 @@
+<form [formGroup]="meuForm" (submit)="onSubmit1()">
+  <br><br>
+  <!-- Usando Bootstrap para centralizar o formulario-->
+  <div class="row d-flex justify-content-center">
+    <div class="col-8">
+      <div class="form-group">
+        <label> Nome Completo </label>
+        <input type="text" class="form-control" formControlName="nome" placeholder="Digite seu nome">
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['nome']"
+        [mensagem]="'Erro ao preencher nome'"
+      ></app-mostrar-mensagem>
+    </div>
+  </div>
+
+  <!-- Usando Bootstrap para centralizar o formulario-->
+  <div class="row d-flex justify-content-center">
+    <div class ="col-8">
+      <div class="form-group">
+        <label>Emai</label>
+        <input type="email" class="form-control" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu e-mail com mais ninguém.</small>
+      </div>
+
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['email']"
+        [mensagem]="'Erro ao preencher nome'"
+      ></app-mostrar-mensagem>
+    </div>
+  </div>
+
+  <br><br>
+  <div align="center">
+      <!-- cria o botão de enviar -->
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <!-- cria o botão de limpar -->
+      <button type="reset" class="btn btn-primary">Limpar</button>
+  </div>
+</form>

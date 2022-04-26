@@ -1,0 +1,18 @@
+<table class="table">
+  <tr bgColor="#7FFFD4">
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>
+      <div class="row float-end">
+        <button class="btn btn-success" routerLink="/professores-gp/criar"> Criar +</button>
+      </div>
+    </th>
+  </tr>
+  <!--Busca os dados do banco de dados-->
+  <tr *ngFor="let p of professores">
+    <th>{{ p.id}}</th>
+    <th>{{p.nome}}</th>
+    <th>{{p.email}}</th>
+  </tr>
+</table>

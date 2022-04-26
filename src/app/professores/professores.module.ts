@@ -15,7 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     ProfessoresRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ],
   exports:[
     ListarComponent
