@@ -12,6 +12,9 @@ export class MostrarMensagemComponent implements OnInit {
   controles: any;
 
   @Input()
+  debug : boolean = false;
+
+  @Input()
   mensagem : string = 'Erro ao preencher campo' ;
 
   constructor() { }

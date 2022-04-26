@@ -4,6 +4,7 @@ import { ListarComponent } from './listar/listar.component';
 import { ProfessoresRoutingModule } from './professores-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfessoresFormComponent } from './professores-form/professores-form.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ProfessoresFormComponent } from './professores-form/professores-form.co
   imports: [
     CommonModule,
     ProfessoresRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   exports:[
     ListarComponent
