@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProfessoresService } from '../professores.service';
 
 @Component({
   selector: 'app-professores-form',
@@ -11,7 +12,7 @@ export class ProfessoresFormComponent implements OnInit {
   meuForm:FormGroup = new FormGroup({});
 
   // 2-) injetar o FormBuilder para poder ajudar a criar os controles do form
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private professoresService: ProfessoresService) { }
 
   // 3-) alocar os controles na variável meuForm através do formBuilder
   ngOnInit(): void {
@@ -20,7 +21,17 @@ export class ProfessoresFormComponent implements OnInit {
       rua:[null, [Validators.required]],
       numero:[null, [Validators.required]],
       cep:[null, [Validators.required]]
-    });
+  });
   }
 
+  // 4-) integrar os controles do form no HTML
+  onSubmit(){
+    console.log(this.meuForm.value);
+    this.professoresService.save(this.meuForm.value)
+    .subscribe(
+      (data)=>{
+        console.log(data);
+      }
+    );
+  }
 }

@@ -13,4 +13,9 @@ export class ProfessoresService {
   getAll(){
     return this.httpClient.get('http://localhost:8080/professores')
   }
+
+  // Salva novos dados no BD
+  save(professorObj: any){
+    return this.httpClient.post('http://localhost:8080/professores', professorObj);
+  }
 }
