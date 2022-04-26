@@ -9,6 +9,7 @@ export class ProfessoresService {
   // httpClient é um serviço angular que permite acessar endereços REST (springTool - get/post/patch.....)
   constructor(private httpClient: HttpClient) { }
 
+  // mostra todos os professores salvos no Banco de Dados
   getAll(){
     return this.httpClient.get('http://localhost:8080/professores')
   }
