@@ -1,31 +1,31 @@
+<div class="row float-end">
+  <button class="btn btn-success" routerLink="/professores/criar"> Criar +</button>
+</div>
+<br><br>
 <table class="table">
 
   <tr bgColor="#7FFFD4">
+
     <th>ID</th>
     <th>Nome</th>
     <th>Rua</th>
     <th>Número</th>
-    <th>Cep</th>
-    <th>
-      <div class="row float-end">
-        <button class="btn btn-success" routerLink="/professores/criar"> Criar +</button>
-      </div>
-    </th>
+    <th>Cep </th>
+    <th>Ações</th>
   </tr>
   <!--Busca os dados do banco de dados-->
   <tr *ngFor="let p of professores">
-    <th>{{ p.id}}</th>
-    <th>{{p.nome}}</th>
-    <th>{{p.rua}}</th>
-    <th>{{p.numero}}</th>
-    <th>{{p.cep}}</th>
-
+    <td>{{ p.id}}</td>
+    <td>{{p.nome}}</td>
+    <td>{{p.rua}}</td>
+    <td>{{p.numero}}</td>
+    <td>{{p.cep}}</td>
+    <th>
+      <button class="btn btn-outline-info" [routerLink]="['/professores/editar',p.id]">Editar</button>
+      <button class="btn btn-outline-danger"(click)="onDelete(p.id!)">Deletar</button>
+    </th>
   </tr>
-
-
-
 </table>
-
 
 
 <!--
@@ -34,5 +34,8 @@
   Exemplo:
     <th scope="row"> 1 </th>
     começa pelo 1 e aumenta a cada linha ...... (1,2,3......n)
+
+
+    https://getbootstrap.com/docs/4.0/components/buttons/
 
 -->

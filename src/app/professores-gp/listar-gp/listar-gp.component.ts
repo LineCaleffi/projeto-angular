@@ -16,11 +16,7 @@ export class ListarGPComponent implements OnInit {
 
   // PEGA OS DADOS DO BANCO DE DADOS
   ngOnInit(): void {
-    this.professorGP.getAll().subscribe((data)=>{
-      console.log(data);
-      this.professores=data;
-      }
-    );
+    this.getAll();
 
     this.activatedRoute.params.subscribe((data)=>{
       console.log(data);
@@ -28,4 +24,18 @@ export class ListarGPComponent implements OnInit {
     );
   }
 
+  onDelete(id : number){
+    this.professorGP.delete(id).subscribe(()=>{
+      console.log(`deletou o registro com id ${id}`);
+      this.getAll();
+    })
+  }
+
+  private getAll(){
+    this.professorGP.getAll().subscribe((data)=>{
+      console.log(data);
+      this.professores=data;
+      }
+    );
+  }
 }

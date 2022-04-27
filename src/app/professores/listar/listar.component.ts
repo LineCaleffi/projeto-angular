@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProfessoresModel } from '../professores.model';
 import { ProfessoresService } from '../professores.service';
 
 @Component({
@@ -9,17 +10,7 @@ import { ProfessoresService } from '../professores.service';
 })
 export class ListarComponent implements OnInit {
 
-  @Input()
-  empresaFilho : string = '';
-//  professores = [
-//   { id : 1, nome: "Fabrizio", email: "fabrizio@grandeporte.com.br" },
-//    { id : 2, nome: "Nelson", email: "nelson@grandeporte.com.br" },
-//    { id : 3, nome: "Marcelo", email: "marcelo@grandeporte.com.br" },
-//    { id : 4, nome: "Ivan", email: "ivan@grandeporte.com.br" },
-//    { id : 5, nome: "Gabriela", email: "gabriela@grandeporte.com.br" }
-//  ];
-
-  professores : any = [];
+  professores : ProfessoresModel[] = [];
 
   //private activatedRoute : ActivatedRoute
    // modificador de acesso, nome da variável e Classe do objeto a ser injetado
@@ -28,16 +19,35 @@ export class ListarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.professoresService.getAll().subscribe(
-      (data : any) => {
-        console.log(data);
-        this.professores=data;
-      }
-    );
+     //pega os dados do BD
+    this.getAll();
 
     this.activatedRoute.params.subscribe(
       (data) => {
         console.log(data);
+      }
+    );
+  }
+
+  // Deleta do banco de dados
+  onDelete(id: number){
+    this.professoresService.delete(id)
+      .subscribe(
+        ()=>{
+          console.log(`deletou registro com id ${id}`);
+           // retorna os dados do BD
+          this.getAll();
+        }
+      );
+  }
+
+  //pega os dados do BD
+  private getAll(){
+    this.professoresService.getAll()
+    .subscribe(
+      (data) => {
+        console.log(data);
+        this.professores = data;
       }
     );
   }

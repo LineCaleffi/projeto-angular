@@ -1,0 +1,24 @@
+<br>
+<div class="row float-end">
+  <button class="btn btn-success" routerLink="/enderecos/criar">Criar +</button>
+</div>
+<br><br>
+<table class="table">
+  <tr bgColor="#7FFFD4">
+    <th>ID</th> <!-- th deixa em negrito-->
+    <th>Rua</th>
+    <th>Numero</th>
+    <th>CEP</th>
+    <th>Cidade</th>
+    <th>Estado</th>
+  </tr>
+
+  <tr *ngFor="let e of enderecos">
+    <td>{{e.id}}</td>
+    <td>{{e.rua}}</td>
+    <td>{{e.numero}}</td>
+    <td>{{e.cep}}</td>
+    <td>{{e.cidade}}</td>
+    <td>{{e.estado}}</td>
+  </tr>
+</table>

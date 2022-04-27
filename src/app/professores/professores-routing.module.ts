@@ -6,7 +6,8 @@ import { ProfessoresFormComponent } from './professores-form/professores-form.co
 const routes: Routes = [
   {path: 'professores', component: ListarComponent},
   {path: 'professores/criar', component: ProfessoresFormComponent},
-  {path: 'professores/:id', component: ListarComponent},
+  //{path: 'professores/:id', component: ListarComponent},
+  {path: 'professores/editar/:id', component: ProfessoresFormComponent}
 ];
 
 @NgModule({

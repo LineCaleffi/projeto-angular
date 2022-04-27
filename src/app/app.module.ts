@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormulariosModule } from './formularios/formularios.module';
 import { ProfessoresModule } from './professores/professores.module';
 import { ProfessoresGpModule } from './professores-gp/professores-gp.module';
+import { EnderecoModule } from './endereco/endereco.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ProfessoresGpModule } from './professores-gp/professores-gp.module';
     FormsModule,
     ProfessoresModule,
     FormulariosModule,
-    ProfessoresGpModule
+    ProfessoresGpModule,
+    EnderecoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
