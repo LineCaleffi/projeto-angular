@@ -1,1 +1,77 @@
-<p>form-e works!</p>
+<form [formGroup]="meuFormE" (submit)="onSubmit()">
+  <br><br>
+  <div class="row d-flex justify-content-center"><!-- centraliza -->
+      <div class="col-8">
+          <div class="form-group">
+              <label >Rua</label>
+              <input type="text" class="form-control" formControlName="rua" placeholder="Digite a rua">
+          </div>
+
+          <app-mostrar-mensagem
+            [controles]="meuFormE.controls['rua']" [mensagem]="'Erro ao preencher o campo'">
+          </app-mostrar-mensagem>
+      </div>
+  </div>
+
+  <div class="row d-flex justify-content-center"><!-- centraliza -->
+    <div class="col-8">
+      <div class="form-group">
+        <label>Número</label>
+        <input type="text" class="form-control" formControlName="numero" placeholder="Digite o número da sua casa">
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuFormE.controls['numero']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center"><!-- centraliza -->
+    <div class="col-8">
+      <div class="form-group">
+        <label>CEP</label>
+        <input type="text" class="form-control" formControlName="cep" placeholder="Digite o cep">
+      </div>
+
+      <app-mostrar-mensagem
+        [controles]="meuFormE.controls['cep']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center"><!-- centraliza -->
+    <div class="col-8">
+      <div class="form-group">
+        <label>Cidade</label>
+        <input type="text" class="form-control" formControlName="cidade" placeholder="Digite a cidade">
+      </div>
+
+      <app-mostrar-mensagem
+        [controles]="meuFormE.controls['cidade']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center"><!-- centraliza -->
+    <div class="col-8">
+      <div class="form-group">
+        <label>Estado</label>
+        <input type="text" class="form-control" formControlName="estado" placeholder="Digite o estado">
+      </div>
+
+      <!-- Mostra mensagem de erro quando sai do campo e está vazio-->
+      <app-mostrar-mensagem
+        [controles]="meuFormE.controls['estado']"
+        [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+
+    </div>
+  </div>
+<br>
+  <div align=center>
+    <button type="submit" class="btn btn-primary">Enviar</button> <!-- 'primary' deixa o botão azul-->
+    <button type="reset" class="btn btn-primary">Limpar</button> <!-- 'primary' deixa o botão azul-->
+  </div>
+
+</form>

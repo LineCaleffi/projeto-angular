@@ -7,6 +7,7 @@ const routes: Routes = [
   // Ao clicar no botão 'professores' mostra a lista de professores (listar-gp.component.html)
   {path: 'enderecos', component: ListarEnderecoComponent},
   {path: 'enderecos/criar', component: FormEComponent},
+  {path: 'enderecos/editar/:id', component: FormEComponent},
 ];
 
 @NgModule({

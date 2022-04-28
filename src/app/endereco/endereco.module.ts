@@ -4,6 +4,7 @@ import { ListarEnderecoComponent } from './listar-endereco/listar-endereco.compo
 import { EnderecoRoutingModule } from './endereco-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormEComponent } from './form-e/form-e.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { FormEComponent } from './form-e/form-e.component';
   imports: [
     CommonModule,
     EnderecoRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   exports: [
     ListarEnderecoComponent

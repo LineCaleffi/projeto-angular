@@ -29,4 +29,11 @@ export class ListarEnderecoComponent implements OnInit {
       this.enderecos = data;
     })
   }
+
+  onDelete(id: number){
+    this.enderecoService.delete(id).subscribe(()=>{
+      console.log(`deletou registro com id ${id}`);
+      this.getAll();
+    });
+  }
 }
