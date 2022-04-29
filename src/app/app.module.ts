@@ -8,11 +8,14 @@ import { FormulariosModule } from './formularios/formularios.module';
 import { ProfessoresModule } from './professores/professores.module';
 import { ProfessoresGpModule } from './professores-gp/professores-gp.module';
 import { EnderecoModule } from './endereco/endereco.module';
+import { ProdutosModule } from './produtos/produtos.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,9 @@ import { EnderecoModule } from './endereco/endereco.module';
     ProfessoresModule,
     FormulariosModule,
     ProfessoresGpModule,
-    EnderecoModule
+    EnderecoModule,
+    ProdutosModule,
+    UsuariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormEComponent } from './form-e/form-e.component';
 import { SharedModule } from '../shared/shared.module';
 
-
-
 @NgModule({
   declarations: [
     ListarEnderecoComponent,

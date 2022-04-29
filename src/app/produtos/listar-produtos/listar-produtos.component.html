@@ -1,0 +1,24 @@
+<br>
+<div class="row float-end">
+  <button class="btn btn-success" routerLink="/produtos/criar">Criar +</button>
+</div>
+<br><br>
+<table class="table">
+  <tr bgColor="#7FFFD4">
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Preço</th>
+    <th>Ações</th>
+  </tr>
+  <tr *ngFor="let p of produtos">
+    <td>{{p.id}}</td>
+    <td>{{p.nome}}</td>
+    <td>{{p.descricao}}</td>
+    <td>{{p.preco}}</td>
+    <td>
+      <button class="btn btn-outline-info" [routerLink]="['/produtos/editar',p.id]">Editar</button>
+      <button class="btn btn-outline-danger" (click)="onDelete(p.id)">Delete</button>
+    </td>
+  </tr>
+</table>
