@@ -13,6 +13,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     ProfessoresGpModule,
     EnderecoModule,
     ProdutosModule,
-    UsuariosModule
+    UsuariosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

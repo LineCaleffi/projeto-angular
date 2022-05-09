@@ -7,13 +7,14 @@ import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produ
 import { ListarGPComponent } from './professores-gp/listar-gp/listar-gp.component';
 import { ListarUsuariosComponent } from './usuarios/listar-usuarios/listar-usuarios.component';
 
+
 const routes: Routes = [
   {path: 'home', component: AppComponent},
   {path: 'formularios/reativo-form', component: ReativoFormComponent},
   {path: 'professores-gp', component: ListarGPComponent},
   {path: 'enderecos', component: ListarEnderecoComponent},
   {path: 'produtos', component: ListarProdutosComponent},
-  {path: 'usuarios', component: ListarUsuariosComponent}
+  {path: 'usuarios', component: ListarUsuariosComponent},
 ];
 
 @NgModule({

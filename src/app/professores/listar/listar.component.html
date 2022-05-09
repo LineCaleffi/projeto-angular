@@ -1,33 +1,51 @@
-<div class="row float-end">
-  <button class="btn btn-success" routerLink="/professores/criar"> Criar +</button>
+<br>
+<div class="container">
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+      <h1 class="display-6">Lista de Professores</h1>
+      <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+    </div>
+  <br>
+  <table class="table">
+
+    <tr bgColor="#7FFFD4">
+
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Rua</th>
+      <th>Número</th>
+      <th>Cep </th>
+      <th>Editar</th>
+      <th>Deletar</th>
+      <th>Criar</th>
+    </tr>
+    <!--Busca os dados do banco de dados-->
+    <tr *ngFor="let p of professores">
+      <td>{{ p.id}}</td>
+      <td>{{p.nome}}</td>
+      <td>{{p.rua}}</td>
+      <td>{{p.numero}}</td>
+      <td>{{p.cep}}</td>
+      <td class="gap-2 d-md-flex">
+        <a class="btn btn-outline-info" [routerLink]="['/professores/editar',p.id]"> <!-- ao clicar no link volta pra tela de inicio-->
+          <img class="edit" src="assets/img/editar.png" alt="edit">
+        </a>
+        <!--<button  class="btn btn-outline-info" [routerLink]="['/professores/editar',p.id]">Editar</button>-->
+      </td>
+
+      <td>
+        <button class="btn btn-outline-danger" (click)="onDelete(p.id!)">
+          <img class="edit" src="assets/img/deletar.jpg" alt="edit">
+        </button>
+      </td>
+
+      <td>
+        <button class="btn btn-success" routerLink="/professores/criar">
+          <img class="criar" src="assets/img/criar.png" alt="criar">
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>
-<br><br>
-<table class="table">
-
-  <tr bgColor="#7FFFD4">
-
-    <th>ID</th>
-    <th>Nome</th>
-    <th>Rua</th>
-    <th>Número</th>
-    <th>Cep </th>
-    <th>Ações</th>
-  </tr>
-  <!--Busca os dados do banco de dados-->
-  <tr *ngFor="let p of professores">
-    <td>{{ p.id}}</td>
-    <td>{{p.nome}}</td>
-    <td>{{p.rua}}</td>
-    <td>{{p.numero}}</td>
-    <td>{{p.cep}}</td>
-    <th>
-      <button class="btn btn-outline-info" [routerLink]="['/professores/editar',p.id]">Editar</button>
-      <button class="btn btn-outline-danger"(click)="onDelete(p.id!)">Deletar</button>
-    </th>
-  </tr>
-</table>
-
-
 <!--
 
   scope="row" -> para acrescentar automatico
