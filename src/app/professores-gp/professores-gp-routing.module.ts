@@ -7,10 +7,12 @@ import { ListarGPComponent } from './listar-gp/listar-gp.component';
 // É necessário colocar nesse arquivo a rota que ira aparecer na tela
 const routes: Routes = [
   // Ao clicar no botão 'professores' mostra a lista de professores (listar-gp.component.html)
-  {path: 'professores', component: ListarGPComponent},
+  {path: 'professores-gp', component: ListarGPComponent},
   // Ao clicar no botão 'criar' mosta o formulário (form.component.html)
   {path: 'professores-gp/criar', component: FormComponent},
-  {path: 'professores/:id', component: ListarGPComponent},
+  {path: 'professores-gp/:id', component: ListarGPComponent},
+  {path: 'professores-gp/editar/:id', component: FormComponent},
+
 ];
 
 @NgModule({

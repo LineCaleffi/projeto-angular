@@ -1,7 +1,13 @@
-<br><br>
-<form [formGroup]="meuForm" (submit)="onSubmit()">
-  <div class="row d-flex justify-content-center">
-    <div class="col-8">
+<br>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-6">Usuários</h1>
+    <p class="lead-1">Inclusão de novos Uusários</p>
+    <hr class="my-2">
+  </div>
+  <br>
+  <form [formGroup]="meuForm" (submit)="onSubmit()">
+    <div class="row d-flex justify-content-center">
       <div class="form-froup">
         <label >Nome do Usuário</label>
         <input type="text" class="form-control" formControlName="nome" placeholder="Digite o nome">
@@ -10,23 +16,23 @@
         [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
       </app-mostrar-mensagem>
     </div>
-  </div>
 
-  <div class="row d-flex justify-content-center">
-    <div class="col-8">
+    <div class="row d-flex justify-content-center">
       <div class="form-froup">
         <label>Email do Usuário</label>
         <input type="text" class="form-control" formControlName="email" placeholder="Digite o email">
+        <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu e-mail com mais ninguém.</small>
       </div>
       <app-mostrar-mensagem
         [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
       </app-mostrar-mensagem>
     </div>
-  </div>
+    <br>
 
-  <br>
-  <div align="center">
-    <button type="submit" class="btn btn-primary">Salvar</button>
-    <button type="reset" class="btn btn-primary">Limpar</button>
-  </div>
-</form>
+    <div class="gap-2 d-md-flex">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="reset" class="btn btn-primary">Limpar</button>
+      <a routerLink="/usuarios" class="btn btn-outline-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>

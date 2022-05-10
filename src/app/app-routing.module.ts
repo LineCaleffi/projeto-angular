@@ -11,7 +11,7 @@ import { ListarUsuariosComponent } from './usuarios/listar-usuarios/listar-usuar
 const routes: Routes = [
   {path: 'home', component: AppComponent},
   {path: 'formularios/reativo-form', component: ReativoFormComponent},
-  {path: 'professores-gp', component: ListarGPComponent},
+  {path: 'gp', component: ListarGPComponent},
   {path: 'enderecos', component: ListarEnderecoComponent},
   {path: 'produtos', component: ListarProdutosComponent},
   {path: 'usuarios', component: ListarUsuariosComponent},
