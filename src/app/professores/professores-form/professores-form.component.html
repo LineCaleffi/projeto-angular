@@ -1,66 +1,63 @@
-<form [formGroup]="meuForm" (submit)="onSubmit()">
-  <br><br>
-  <div class="row d-flex justify-content-center">
-      <div class="col-8">
-          <div class="form-group">
-              <label >Nome Completo</label>
-              <input type="text" class="form-control" formControlName="nome" placeholder="Digite seu nome">
-          </div>
+<br>
+<div class="container">
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+    <h1 class="display-6">Professores </h1>
+    <p class="lead-1">Inclusão de novos Professores</p>
+    <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+  </div><br>
+  <form [formGroup]="meuForm" (submit)="onSubmit()">
+    <div class="row d-flex justify-content-center">
+            <div class="form-group">
+                <label>Nome Completo</label>
+                <input type="text" class="form-control" formControlName="nome" placeholder="Digite seu nome" data-required data-min-length="3" data-max-length="16">
+            </div>
 
-          <app-mostrar-mensagem
-              [controles]="meuForm.controls['nome']"
-              [mensagem]="'Erro ao preencher nome'"
-          ></app-mostrar-mensagem>
+            <app-mostrar-mensagem
+                [controles]="meuForm.controls['nome']"
+                [mensagem]="'Erro ao preencher nome'"
+            ></app-mostrar-mensagem>
+    </div>
 
-      </div>
-  </div>
+    <div class="row d-flex justify-content-center">
+            <div class="form-group">
+                <label >Rua</label>
+                <input type="text" class="form-control" formControlName="rua" placeholder="Digite sua rua" data-required data-only-letters>
+            </div>
 
-  <div class="row d-flex justify-content-center">
-      <div class="col-8">
-          <div class="form-group">
-              <label >Rua</label>
-              <input type="text" class="form-control" formControlName="rua" placeholder="Digite sua rua">
-          </div>
+            <app-mostrar-mensagem
+                [controles]="meuForm.controls['rua']"
+                [mensagem]="'Erro ao preencher rua'"
+            ></app-mostrar-mensagem>
+        </div>
 
-          <app-mostrar-mensagem
-              [controles]="meuForm.controls['rua']"
-              [mensagem]="'Erro ao preencher rua'"
-          ></app-mostrar-mensagem>
-      </div>
-  </div>
+    <div class="row d-flex justify-content-center">
 
-  <div class="row d-flex justify-content-center">
-      <div class="col-8">
-          <div class="form-group">
-              <label >Número</label>
-              <input type="text" class="form-control" formControlName="numero" placeholder="Digite o numero">
-          </div>
+            <div class="form-group">
+                <label >Número</label>
+                <input type="text" class="form-control" formControlName="numero" placeholder="Digite o numero">
+            </div>
 
-          <app-mostrar-mensagem
-              [controles]="meuForm.controls['numero']"
-              [mensagem]="'Erro ao preencher número'"
-          ></app-mostrar-mensagem>
+            <app-mostrar-mensagem
+                [controles]="meuForm.controls['numero']"
+                [mensagem]="'Erro ao preencher número'"
+            ></app-mostrar-mensagem>
+    </div>
 
-      </div>
-  </div>
+    <div class="row d-flex justify-content-center">
+            <div class="form-group">
+                <label >CEP</label>
+                <input type="text" class="form-control" formControlName="cep" placeholder="Digite o CEP">
+            </div>
 
-  <div class="row d-flex justify-content-center">
-      <div class="col-8">
-          <div class="form-group">
-              <label >CEP</label>
-              <input type="text" class="form-control" formControlName="cep" placeholder="Digite o CEP">
-          </div>
-
-          <app-mostrar-mensagem
-              [controles]="meuForm.controls['cep']"
-              [mensagem]="'Erro ao preencher CEP'"
-          ></app-mostrar-mensagem>
-      </div>
-  </div>
-  <br><br>
-  <div align="center">
-      <button type="submit" class="btn btn-primary">Salvar</button> <!-- 'primary' deixa o botão azul-->
-      <button type="reset" class="btn btn-primary">Limpar</button>
-  </div>
-
-</form>
+            <app-mostrar-mensagem
+                [controles]="meuForm.controls['cep']"
+                [mensagem]="'Erro ao preencher CEP'"
+            ></app-mostrar-mensagem>
+    </div><br>
+    <div class="gap-2 d-md-flex">
+        <button type="submit" class="btn btn-primary">Salvar</button> <!-- 'primary' deixa o botão azul-->
+        <button type="reset" class="btn btn-primary">Limpar</button>
+        <a routerLink="/professores" class="btn btn-outline-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>

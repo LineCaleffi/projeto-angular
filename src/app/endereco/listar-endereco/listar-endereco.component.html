@@ -1,29 +1,51 @@
 <br>
-<div class="row float-end">
-  <button class="btn btn-success" routerLink="/enderecos/criar">Criar +</button>
-</div>
-<br><br>
-<table class="table">
-  <tr bgColor="#7FFFD4">
-    <th>ID</th> <!-- th deixa em negrito-->
-    <th>Rua</th>
-    <th>Numero</th>
-    <th>CEP</th>
-    <th>Cidade</th>
-    <th>Estado</th>
-    <th>Ações</th>
-  </tr>
+<div class="container">
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+      <h1 class="display-6">Lista de Endereços
+        <div class="row float-end"> <!-- alinha no canto direito -->
+        <button class="btn btn-outline-info" routerLink="/enderecos/criar">
+          <img class="criar" src="assets/img/criar.png" alt="criar">
+        </button>
+        </div>
+      </h1>
+      <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+    </div>
+  <br>
 
-  <tr *ngFor="let e of enderecos">
-    <td>{{e.id}}</td>
-    <td>{{e.rua}}</td>
-    <td>{{e.numero}}</td>
-    <td>{{e.cep}}</td>
-    <td>{{e.cidade}}</td>
-    <td>{{e.estado}}</td>
-    <td>
-      <button class="btn btn-outline-info" [routerLink]="['/enderecos/editar',e.id]">Editar</button>
-      <button class="btn btn-outline-danger" (click)="onDelete(e.id!)">Deletar</button>
-    </td>
-  </tr>
-</table>
+  <!-- table-houver serve para ativa o destaque de uma linha quando passamos o cursor do mouse sobre ela; -->
+  <table class="table table-hover">
+    <thead> <!-- CABEÇALHO DA TABELA -->
+      <tr class="table table-dark"> <!-- deixa a tabela preta e a letra branca-->
+        <th>ID</th> <!-- th deixa em negrito-->
+        <th>Rua</th>
+        <th>Numero</th>
+        <th>CEP</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody> <!-- CORPO DA TABELA-->
+      <tr *ngFor="let e of enderecos">
+        <td>{{e.id}}</td>
+        <td>{{e.rua}}</td>
+        <td>{{e.numero}}</td>
+        <td>{{e.cep}}</td>
+        <td>{{e.cidade}}</td>
+        <td>{{e.estado}}</td>
+        <td>
+          <a class="btn btn-outline-info" [routerLink]="['/enderecos/editar',e.id]">
+          <img class="edit" src="assets/img/editar.png" alt="edit">
+          </a>
+        </td>
+        <td>
+          <button class="btn btn-outline-danger" (click)="onDelete(e.id!)">
+            <img class="edit" src="assets/img/deletar.jpg" alt="edit">
+          </button>
+
+        </td>
+      </tr>
+  </tbody>
+  </table>
+</div>

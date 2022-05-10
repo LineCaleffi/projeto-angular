@@ -1,7 +1,14 @@
+<br>
+<div class="container">
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+    <h1 class="display-6">Endereços </h1>
+    <p class="lead-1">Inclusão de novos Endereços</p>
+    <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+  </div><br>
+
 <form [formGroup]="meuFormE" (submit)="onSubmit()">
-  <br><br>
   <div class="row d-flex justify-content-center"><!-- centraliza -->
-      <div class="col-8">
+
           <div class="form-group">
               <label >Rua</label>
               <input type="text" class="form-control" formControlName="rua" placeholder="Digite a rua">
@@ -10,11 +17,10 @@
           <app-mostrar-mensagem
             [controles]="meuFormE.controls['rua']" [mensagem]="'Erro ao preencher o campo'">
           </app-mostrar-mensagem>
-      </div>
   </div>
 
   <div class="row d-flex justify-content-center"><!-- centraliza -->
-    <div class="col-8">
+
       <div class="form-group">
         <label>Número</label>
         <input type="text" class="form-control" formControlName="numero" placeholder="Digite o número da sua casa">
@@ -22,11 +28,11 @@
       <app-mostrar-mensagem
         [controles]="meuFormE.controls['numero']" [mensagem]="'Erro ao preencher campo'">
       </app-mostrar-mensagem>
-    </div>
+
   </div>
 
   <div class="row d-flex justify-content-center"><!-- centraliza -->
-    <div class="col-8">
+
       <div class="form-group">
         <label>CEP</label>
         <input type="text" class="form-control" formControlName="cep" placeholder="Digite o cep">
@@ -36,11 +42,10 @@
         [controles]="meuFormE.controls['cep']" [mensagem]="'Erro ao preencher campo'">
       </app-mostrar-mensagem>
 
-    </div>
   </div>
 
   <div class="row d-flex justify-content-center"><!-- centraliza -->
-    <div class="col-8">
+
       <div class="form-group">
         <label>Cidade</label>
         <input type="text" class="form-control" formControlName="cidade" placeholder="Digite a cidade">
@@ -49,12 +54,9 @@
       <app-mostrar-mensagem
         [controles]="meuFormE.controls['cidade']" [mensagem]="'Erro ao preencher campo'">
       </app-mostrar-mensagem>
-
-    </div>
   </div>
 
   <div class="row d-flex justify-content-center"><!-- centraliza -->
-    <div class="col-8">
       <div class="form-group">
         <label>Estado</label>
         <input type="text" class="form-control" formControlName="estado" placeholder="Digite o estado">
@@ -65,13 +67,13 @@
         [controles]="meuFormE.controls['estado']"
         [mensagem]="'Erro ao preencher campo'">
       </app-mostrar-mensagem>
-
-    </div>
   </div>
 <br>
-  <div align=center>
+  <div class="gap-2 d-md-flex">
     <button type="submit" class="btn btn-primary">Enviar</button> <!-- 'primary' deixa o botão azul-->
     <button type="reset" class="btn btn-primary">Limpar</button> <!-- 'primary' deixa o botão azul-->
+    <a routerLink="/enderecos" class="btn btn-outline-secondary">Cancelar</a>
   </div>
 
 </form>
+</div>
