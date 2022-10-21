@@ -4,14 +4,12 @@ import { ListarProdutosComponent } from './listar-produtos/listar-produtos.compo
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { ProdutosRoutingModule } from './produtos-routing.module';
-import { ProdutosFormComponent } from './produtos-form/produtos-form.component';
 
 
 
 @NgModule({
   declarations: [
-    ListarProdutosComponent,
-    ProdutosFormComponent
+    ListarProdutosComponent
   ],
   imports: [
     CommonModule,

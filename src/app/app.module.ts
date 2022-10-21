@@ -4,10 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormulariosModule } from './formularios/formularios.module';
-import { ProfessoresModule } from './professores/professores.module';
-import { ProfessoresGpModule } from './professores-gp/professores-gp.module';
-import { EnderecoModule } from './endereco/endereco.module';
+import { ClientesModule } from './clientes/clientes.module';
 import { ProdutosModule } from './produtos/produtos.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 
@@ -22,12 +19,9 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ProfessoresModule,
-    FormulariosModule,
-    ProfessoresGpModule,
-    EnderecoModule,
     ProdutosModule,
     UsuariosModule,
+    ClientesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

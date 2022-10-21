@@ -1,29 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UsuariosService } from '../usuarios.service';
+import { ClientesService } from '../clientes.service';
 
 @Component({
-  selector: 'app-form-usuarios',
-  templateUrl: './form-usuarios.component.html',
-  styleUrls: ['./form-usuarios.component.scss']
+  selector: 'app-form-clientes',
+  templateUrl: './form-clientes.component.html',
+  styleUrls: ['./form-clientes.component.scss']
 })
-export class FormUsuariosComponent implements OnInit {
+export class FormClientesComponent implements OnInit {
   meuForm : FormGroup = new FormGroup({});
 
   isEdicao : boolean = false;
   id : number = -1;
 
   constructor(private formBuilder: FormBuilder,
-              private usuariosService: UsuariosService,
+              private clientesService: ClientesService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.meuForm = this.formBuilder.group({
       nome:[null, [Validators.required] ],
-      cpf:[null, [Validators.required] ],
-      dataNasc:[null, [Validators.required] ],
+      cnpj:[null, [Validators.required] ],
       endereco:[null, [Validators.required] ]
     });
 
@@ -34,10 +33,10 @@ export class FormUsuariosComponent implements OnInit {
         this.isEdicao=true;
         this.id=parametros.id;
 
-        this.usuariosService.getOne(parametros.id).subscribe(
-          (dadosUsuario)=>{
-            console.log(dadosUsuario);
-            this.meuForm.patchValue(dadosUsuario);
+        this.clientesService.getOne(parametros.id).subscribe(
+          (dadosCliente)=>{
+            console.log(dadosCliente);
+            this.meuForm.patchValue(dadosCliente);
           }
         )
       } else{
@@ -49,17 +48,17 @@ export class FormUsuariosComponent implements OnInit {
 
   onSubmit(){
     if(this.isEdicao == false){
-      this.usuariosService.save(this.meuForm.value).subscribe(
+      this.clientesService.save(this.meuForm.value).subscribe(
         (data)=>{
           console.log(data);
-          this.router.navigate(['/usuarios']);
+          this.router.navigate(['/clientes']);
         }
       );
     }else{
-      this.usuariosService.update(this.id, this.meuForm.value).subscribe(
+      this.clientesService.update(this.id, this.meuForm.value).subscribe(
         (data)=>{
           console.log(data);
-          this.router.navigate(['/usuarios']);
+          this.router.navigate(['/clientes']);
         });
     }
   }
